@@ -1,0 +1,67 @@
+body {
+    color: #fff;
+    background-color: rgb(29, 26, 26);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    font-size: 2.4rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(28, 26, 26);
+    background: linear-gradient(90deg, rgb(18, 92, 255) 0%, rgb(0, 102, 255) 100%);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgba(8, 114, 244, 0.6);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.fa-home {
+    margin-left: 1rem;
+    font-size: 2.1em;
+    color: rgb(28, 26, 26);
+}
+
+#pontuacaoFinal {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+}
+
+#highScoresList {
+    list-style: none;
+    padding: 0;
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
