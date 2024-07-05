@@ -59,14 +59,14 @@ h2 {
 .btn {
     font-size: 2.4rem;
     padding: 2rem 0;
-    width: 100%; /* Ajustado para largura completa do container */
+    width: 100%;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
     color: rgb(28, 26, 26);
     background: linear-gradient(90deg, rgb(18, 92, 255) 0%, rgb(0, 102, 255) 100%);
     border-radius: 4px;
-    display: inline-block; /* Garantir que o botão seja um elemento de bloco inline */
+    display: inline-block;
 }
 
 .btn:hover {
@@ -102,12 +102,12 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 30rem; 
+    max-width: 30rem;
 }
 
 input {
     margin-bottom: 1rem;
-    width: 100%; 
+    width: 100%;
     padding: 1.5rem;
     font-size: 1.8rem;
     border: none;
@@ -120,7 +120,7 @@ input::placeholder {
 
 #nomeUsuario {
     margin-bottom: 3rem;
-    width: 100%;  
+    width: 100%;
     outline: none;
 }
 
@@ -132,11 +132,29 @@ input::placeholder {
 
 #salvarPontuacaoBtn {
     border: none;
-    width: 100%; /
+    width: 100%;
 }
 
 .fa-home {
     margin-left: 1rem;
     font-size: 2.1em;
     color: rgb(28, 26, 26);
+}
+
+.hidden {
+    display: none;
+}
+
+.mensagem-confirmacao {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    font-size: 2rem;
+    padding: 15px; 
+    background-color: rgba(0, 128, 0, 0.1);
+    border: 2px solid green;
+    border-radius: 4px;
+    width: 100%;
 }

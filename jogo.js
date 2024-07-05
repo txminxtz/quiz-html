@@ -70,7 +70,7 @@ const novasPerguntas = () => {
     question.innerText = currentQuestion.pergunta;
 
     escolhas.forEach(escolha => {
-        const numero = escolha.dataset['number']; // Corrigido para corresponder ao data-number no HTML
+        const numero = escolha.dataset['number']; 
         escolha.innerText = currentQuestion['escolha' + numero];
     });
 

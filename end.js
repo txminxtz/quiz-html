@@ -1,29 +1,42 @@
-const username = document.getElementById('username');
-const saveScoreBtn = document.getElementById('saveScoreBtn');
-const finalScore = document.getElementById('finalScore');
-const mostRecentScore = localStorage.getItem('mostRecentScore');
+document.addEventListener('DOMContentLoaded', () => {
+    const username = document.getElementById('nomeUsuario');
+    const saveScoreBtn = document.getElementById('salvarPontuacaoBtn');
+    const pontuacaoFinal = document.getElementById('pontuacaoFinal');
+    const pontuacaoRecente = localStorage.getItem('pontuacaoRecente');
+    const mensagemConfirmacao = document.getElementById('mensagemConfirmacao');
 
-const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    const highScores = JSON.parse(localStorage.getItem('maiorPontuacao')) || [];
 
-const MAX_HIGH_SCORES = 5;
+    pontuacaoFinal.innerText = pontuacaoRecente;
 
-finalScore.innerText = mostRecentScore;
+    username.addEventListener('input', () => {
+        saveScoreBtn.disabled = username.value.trim() === '';
+    });
 
-username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value;
-});
+    const salvarPontuacao = e => {
+        e.preventDefault();
 
-saveHighScore = (e) => {
-    e.preventDefault();
+        const score = {
+            pontuacao: parseInt(pontuacaoRecente),
+            nome: username.value.trim()
+        };
 
-    const score = {
-        score: mostRecentScore,
-        name: username.value,
+        highScores.push(score);
+
+        highScores.sort((a, b) => b.pontuacao - a.pontuacao);
+
+        highScores.splice(5);
+
+        localStorage.setItem('maiorPontuacao', JSON.stringify(highScores));
+
+        mensagemConfirmacao.classList.remove('hidden');
+
+        setTimeout(() => {
+            mensagemConfirmacao.classList.add('hidden');
+        }, 3000);
+
+        username.value = '';
     };
-    highScores.push(score);
-    highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(5);
 
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
-};
+    saveScoreBtn.addEventListener('click', salvarPontuacao);
+});
